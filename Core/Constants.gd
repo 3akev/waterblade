@@ -1,6 +1,6 @@
 extends Node
 
-const PLAYER_SPEED = 300  # in pixels/second
+const PLAYER_SPEED = 130  # in pixels/second
 
 const MAX_ROOM_SIZE = Vector2(25, 20)
 const MIN_ROOM_SIZE = Vector2(15, 12)
