@@ -21,7 +21,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Constants="*res://Constants.gd"
+Constants="*res://Core/Constants.gd"
 
 [input]
 
