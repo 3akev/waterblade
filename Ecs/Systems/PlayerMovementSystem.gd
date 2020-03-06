@@ -1,4 +1,4 @@
-extends "res://Ecs/Core/System.gd"
+extends "res://Core/System.gd"
 
 func _init():
 	required_components = ["PlayerMovementComponent"]
