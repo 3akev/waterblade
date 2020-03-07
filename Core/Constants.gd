@@ -8,3 +8,5 @@ const MIN_ROOM_SIZE = Vector2(15, 12)
 const ROOM_SLOT_SIZE = MAX_ROOM_SIZE + Vector2(2, 2)
 const MIN_ROOMS_PER_DUNGEON = 6
 const MAX_ROOMS_PER_DUNGEON = 18
+
+const TUNNEL_WIDTH = 4
