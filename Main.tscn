@@ -8,10 +8,10 @@
 [ext_resource path="res://Ecs/Entities/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/DawnLike/Objects/Wall.png" type="Texture" id=7]
 
-[sub_resource type="ConvexPolygonShape2D" id=2]
+[sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
-[sub_resource type="TileSet" id=1]
+[sub_resource type="TileSet" id=2]
 0/name = "Floor"
 0/texture = ExtResource( 5 )
 0/tex_offset = Vector2( 0, 0 )
@@ -34,7 +34,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 2 ),
+"shape": SubResource( 1 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 1/z_index = 0
@@ -45,8 +45,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 script = ExtResource( 2 )
 
 [node name="TileMap" type="TileMap" parent="World"]
-position = Vector2( -496.952, -110.766 )
-tile_set = SubResource( 1 )
+tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
 cell_quadrant_size = 64
 cell_clip_uv = true
@@ -56,7 +55,7 @@ format = 1
 script = ExtResource( 4 )
 
 [node name="Player" parent="Entities" instance=ExtResource( 6 )]
-position = Vector2( 60.0839, 46.8496 )
+position = Vector2( 159.597, 106.557 )
 
 [node name="Systems" type="Node2D" parent="." groups=[
 "Systems",
