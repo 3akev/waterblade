@@ -6,6 +6,7 @@ const directions = [Vector2.LEFT, Vector2.RIGHT, Vector2.UP, Vector2.DOWN]
 var rng
 var dungeon_placer
 var rooms = {}
+var tunnels = {}
 
 func _init(_rng, tilemap):
 	rng = _rng
@@ -40,12 +41,14 @@ func create_next_room():
 
 func create_tunnel(slot1, slot2):
 	var direction = slot1 - slot2
+	var tunnel
 	if direction in [Vector2.UP, Vector2.DOWN]:
-		var tunnel = get_v_tunnel(rooms[slot1], rooms[slot2])
+		tunnel = get_v_tunnel(rooms[slot1], rooms[slot2])
 		dungeon_placer.place_v_tunnel(tunnel)
 	else:
-		var tunnel = get_h_tunnel(rooms[slot1], rooms[slot2])
+		tunnel = get_h_tunnel(rooms[slot1], rooms[slot2])
 		dungeon_placer.place_h_tunnel(tunnel)
+	tunnels[{slot1: 1, slot2: 1}] = tunnel
 
 func get_room(room_slot):
 	var room = Rect2(0, 0, rng.randi_range(Constants.MIN_ROOM_SIZE.x, Constants.MAX_ROOM_SIZE.x), rng.randi_range(Constants.MIN_ROOM_SIZE.y, Constants.MAX_ROOM_SIZE.y))
@@ -64,7 +67,7 @@ func get_h_tunnel(room1, room2):
 		x = room2.end.x
 		length = room1.position.x - room2.end.x
 	
-	var y = clamp(room1.position.y + room1.size.y/2, room2.position.y + 2, room2.end.y - 2)
+	var y = room1.position.y + (room1.size.y - Constants.TUNNEL_WIDTH)/2
 	var tunnel = Rect2(x, y, length, Constants.TUNNEL_WIDTH)
 	return tunnel
 
@@ -78,6 +81,6 @@ func get_v_tunnel(room1, room2):
 		y = room2.end.y
 		length = room1.position.y - room2.end.y
 	
-	var x = clamp(room1.position.x + room1.size.x/2, room2.position.x + 2, room2.end.x - 2)
+	var x = room1.position.x + (room1.size.x - Constants.TUNNEL_WIDTH)/2
 	var tunnel = Rect2(x, y, Constants.TUNNEL_WIDTH, length)
 	return tunnel
