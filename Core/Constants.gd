@@ -5,7 +5,7 @@ const PLAYER_SPEED = 130  # in pixels/second
 const MAX_ROOM_SIZE = Vector2(25, 20)
 const MIN_ROOM_SIZE = Vector2(15, 12)
 
-const ROOM_PADDING = 2
+const ROOM_PADDING = 8
 const ROOM_SLOT_SIZE = MAX_ROOM_SIZE + Vector2(ROOM_PADDING, ROOM_PADDING)
 const MIN_ROOMS_PER_DUNGEON = 6
 const MAX_ROOMS_PER_DUNGEON = 18
