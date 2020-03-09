@@ -1,7 +1,7 @@
 extends "res://Core/System.gd"
 
 func _init():
-	required_components = ["PlayerMovementComponent"]
+	required_components = ["PlayerControlComponent"]
 
 func _process(delta):
 	for entity in entities:

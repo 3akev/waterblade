@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 var required_components = []
 var entities = []
