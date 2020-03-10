@@ -27,7 +27,6 @@ shape = SubResource( 1 )
 disabled = true
 
 [node name="Sprite" type="Sprite" parent="."]
-visible = false
 material = SubResource( 3 )
 position = Vector2( 0, 7 )
 rotation = -2.35619

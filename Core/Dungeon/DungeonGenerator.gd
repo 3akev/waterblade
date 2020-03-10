@@ -2,6 +2,7 @@ extends Node
 
 const DungeonCreator = preload("res://Core/Dungeon/DungeonCreator.gd")
 const Dungeon = preload("res://Core/Dungeon/Dungeon.gd")
+const DT = preload("res://Core/Utils/DungeonTools.gd")
 
 var rng
 var creator
@@ -25,8 +26,8 @@ func generate_dungeon():
 	return dungeon
 
 func generate_next_room(dungeon):
-	var previous_slot = dungeon.get_random_room()
-	var slot = dungeon.get_adjacent_space(previous_slot)
+	var previous_slot = DT.get_random_room(dungeon)
+	var slot = DT.get_adjacent_space(dungeon, previous_slot)
 	
 	if slot == null:
 		return generate_next_room(dungeon)
@@ -35,8 +36,8 @@ func generate_next_room(dungeon):
 	generate_tunnel(dungeon, previous_slot, slot)
 
 func generate_extra_tunnel(dungeon):
-	var slot1 = dungeon.get_random_room()
-	var slot2 = dungeon.get_adjacent_non_connected_room(slot1)
+	var slot1 = DT.get_random_room(dungeon)
+	var slot2 = DT.get_adjacent_non_connected_room(dungeon, slot1)
 	
 	if slot2 == null:
 		return
