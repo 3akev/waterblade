@@ -17,9 +17,7 @@ func _unhandled_input(event):
 		Input.action_release("sword_up")
 	if event is InputEventMouseMotion and Input.is_mouse_button_pressed(BUTTON_LEFT):
 		var angle_to_mouse = player.get_angle_to(get_global_mouse_position())
-#		print(angle_to_mouse)
 		var vec = Vector2(cos(angle_to_mouse), sin(angle_to_mouse))
-		print(str(vec.x) + " " + str(vec.y))
 
 		if vec.x > 0:
 			Input.action_press("sword_right", abs(vec.x))
