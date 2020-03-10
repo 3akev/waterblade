@@ -23,6 +23,9 @@ func generate_dungeon():
 	for _i in range(num_extra_tunnels):
 		generate_extra_tunnel(dungeon)
 	
+	for slot in dungeon.rooms:
+		dungeon.floors[slot] = get_room_floor(dungeon, slot)
+	
 	return dungeon
 
 func generate_next_room(dungeon):
@@ -53,3 +56,6 @@ func generate_tunnel(dungeon, slot1, slot2):
 		tunnel = creator.create_h_tunnel(dungeon.rooms[slot1], dungeon.rooms[slot2])
 	dungeon.add_tunnel([slot1, slot2], tunnel)
 
+func get_room_floor(dungeon, slot):
+	var rect = dungeon.rooms[slot]
+	return Rect2(rect.position.x + 1, rect.position.y + 1, rect.size.x - 2, rect.size.y - 2)

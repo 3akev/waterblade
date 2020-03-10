@@ -10,7 +10,7 @@ func _init():
 	
 func on_generated_dungeon(dungeon):
 	for slot in dungeon.rooms:
-		var room = dungeon.rooms[slot]
+		var room = dungeon.floors[slot]
 		var num_enemies = randi() % (Constants.MAX_ENEMIES_PER_ROOM - Constants.MIN_ENEMIES_PER_ROOM) + Constants.MIN_ENEMIES_PER_ROOM 
 		for _i in num_enemies:
 			var enemy = Enemy.instance()

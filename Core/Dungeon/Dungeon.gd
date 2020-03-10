@@ -1,6 +1,7 @@
 extends Node
 
 var rooms = {}
+var floors = {}
 var tunnels = {}
 
 func add_room(slot, rect):

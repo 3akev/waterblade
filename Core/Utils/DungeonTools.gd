@@ -26,6 +26,8 @@ static func map_to_world(d, tilemap):
 		scaled.rooms[slot] = map_rect_to_world(tilemap, d.rooms[slot])
 	for slot in d.tunnels:
 		scaled.tunnels[slot] = map_rect_to_world(tilemap, d.tunnels[slot])
+	for slot in d.floors:
+		scaled.floors[slot] = map_rect_to_world(tilemap, d.floors[slot])
 	return scaled
 
 static func map_rect_to_world(tilemap, rect):
