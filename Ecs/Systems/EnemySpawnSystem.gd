@@ -1,10 +1,11 @@
-extends "res://Core/System.gd"
+extends "res://Ecs/Core/System.gd"
 
 const Enemy = preload("res://Ecs/Entities/Brute.tscn")
 
 onready var tilemap = get_tree().current_scene.get_node("World/TileMap")
 
 func _init():
+	._init()
 	Events.connect("generated_dungeon", self, "on_generated_dungeon")
 	
 func on_generated_dungeon(dungeon):

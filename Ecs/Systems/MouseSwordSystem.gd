@@ -1,4 +1,4 @@
-extends "res://Core/System.gd"
+extends "res://Ecs/Core/System.gd"
 
 var player
 

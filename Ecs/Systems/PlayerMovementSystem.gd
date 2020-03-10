@@ -1,6 +1,7 @@
-extends "res://Core/System.gd"
+extends "res://Ecs/Core/System.gd"
 
 func _init():
+	._init()
 	required_components = ["PlayerControlComponent"]
 
 func _process(delta):
