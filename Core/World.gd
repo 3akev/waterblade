@@ -13,3 +13,4 @@ func _ready():
 	rng.randomize()
 	dungeon = DungeonGenerator.new(rng).generate_dungeon()
 	DungeonPlacer.new(tilemap).place_dungeon(dungeon)
+	Events.emit_signal("generated_dungeon", dungeon)

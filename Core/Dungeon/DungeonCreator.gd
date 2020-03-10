@@ -9,6 +9,8 @@ func create_room(room_slot):
 	room.position = room_slot * Constants.ROOM_SLOT_SIZE
 	room.position.x += (Constants.ROOM_SLOT_SIZE.x * (room_slot.x + 1) - room.end.x) / 2
 	room.position.y += (Constants.ROOM_SLOT_SIZE.y * (room_slot.y + 1) - room.end.y) / 2
+	
+	room.position = room.position.round()
 	return room
 
 func create_h_tunnel(room1, room2):

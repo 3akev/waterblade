@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Constants="*res://Core/Constants.gd"
+Events="*res://Core/Events.gd"
 
 [display]
 
