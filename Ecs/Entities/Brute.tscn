@@ -1,13 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Assets/DawnLike/Characters/Misc0.png" type="Texture" id=1]
 
-[sub_resource type="RectangleShape2D" id=1]
-
 [node name="Brute" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -4.92679, -7.53765, -1.04861, -7.53765, 2.03404, -5.54885, 4.02285, -4.65388, 6.50885, -1.47179, 7.20494, 2.20751, 7.90102, 5.98624, 3.12788, 5.98624, 2.73012, 8.47225, -3.83295, 7.67673, -7.91, 6.68233, -8.00945, -1.77011, -7.01504, -2.16787, -6.71672, -6.34437 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
