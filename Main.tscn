@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Ecs/Systems/PlayerMovementSystem.gd" type="Script" id=1]
 [ext_resource path="res://Core/World.gd" type="Script" id=2]
+[ext_resource path="res://Ecs/Systems/BehaviourSystem.gd" type="Script" id=3]
 [ext_resource path="res://Core/Entities.gd" type="Script" id=4]
 [ext_resource path="res://Assets/DawnLike/Objects/Tile.png" type="Texture" id=5]
 [ext_resource path="res://Ecs/Entities/Player.tscn" type="PackedScene" id=6]
@@ -52,6 +53,9 @@ script = ExtResource( 8 )
 
 [node name="MouseSwordSystem" type="Node2D" parent="Systems"]
 script = ExtResource( 9 )
+
+[node name="BehaviourSystem" type="Node2D" parent="Systems"]
+script = ExtResource( 3 )
 
 [node name="World" type="Node2D" parent="."]
 script = ExtResource( 2 )

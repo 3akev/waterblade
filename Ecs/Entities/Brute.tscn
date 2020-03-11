@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/DawnLike/Characters/Misc0.png" type="Texture" id=1]
+[ext_resource path="res://Ecs/Components/BehaviourComponent.gd" type="Script" id=2]
+[ext_resource path="res://Core/Behaviours/BruteBehaviour.gd" type="Script" id=3]
 
 [node name="Brute" type="KinematicBody2D"]
 collision_layer = 2
@@ -15,3 +17,7 @@ position = Vector2( 8, 8 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 16, 48, 16, 16 )
+
+[node name="BehaviourComponent" type="Node" parent="."]
+script = ExtResource( 2 )
+behaviour = ExtResource( 3 )
