@@ -1,3 +1,5 @@
+extends Node
+
 const DefaultState = preload("res://Core/StateMachine/DefaultState.gd")
 
 # The state machine's target object, node, etc

@@ -1,7 +1,6 @@
+const StateMachine = preload("res://Core/StateMachine/StateMachine.gd")
 
-const StateMachine = preload("state_machine.gd")
-
-func create(config = {}):
+static func create(config = {}):
 	"""
 	Factory method accepting an optional configuration object
 	"""

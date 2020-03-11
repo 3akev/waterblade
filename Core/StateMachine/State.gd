@@ -1,13 +1,20 @@
-extends Node
-
 # State ID
-var id
+var id = "" setget set_id
 
 # Target for the state (object, node, etc)
-var target
+var target = null setget set_target
 
 # Reference to state machine
-var state_machine
+var state_machine = null setget set_state_machine
+
+func set_id(value):
+	id = value
+
+func set_target(value):
+	target = value
+
+func set_state_machine(value):
+	state_machine = value
 
 # State machine callback called during transition when entering this state
 func _on_enter_state(): pass
