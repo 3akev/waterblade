@@ -5,6 +5,7 @@ func _init():
 
 func _ready():
 	Events.emit_signal("spawn_entity", $Player)
+	Events.emit_signal("spawned_player", $Player)
 
 func on_spawn_entity(entity):
 	add_child(entity)
