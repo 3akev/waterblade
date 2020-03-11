@@ -16,6 +16,9 @@ func set_target(value):
 func set_state_machine(value):
 	state_machine = value
 
+func _ready():
+	pass
+
 # State machine callback called during transition when entering this state
 func _on_enter_state(): pass
 

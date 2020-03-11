@@ -152,6 +152,10 @@ func transition(state_id):
 
 	set_current_state(state_id)
 
+func _ready():
+	for state in states.values():
+		state._ready()
+
 func _process(delta):
 	"""
 	Callback to handle _process(). Must be called manually by code
