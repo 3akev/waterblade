@@ -13,5 +13,5 @@ func recheck_entity(entity):
 
 func on_integrate_forces(state, entity):
 	var direction = MovementControl.get_movement_from_actions("up", "right", "down", "left")
-	var movement = (direction * Constants.PLAYER_SPEED).clamped(Constants.PLAYER_SPEED)
-	state.linear_velocity = movement
+	var movement = (direction * Constants.PLAYER_SPEED)
+	state.linear_velocity = (state.linear_velocity + movement).clamped(Constants.PLAYER_SPEED)
