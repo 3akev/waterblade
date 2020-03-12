@@ -6,3 +6,4 @@ signal spawned_player(entity)
 
 signal spawn_entity(entity)
 signal damage_entity(entity, damage)
+signal kill_entity(entity)

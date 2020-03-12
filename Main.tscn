@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Ecs/Systems/PlayerMovementSystem.gd" type="Script" id=1]
 [ext_resource path="res://Core/World.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/DawnLike/Objects/Wall.png" type="Texture" id=7]
 [ext_resource path="res://Ecs/Systems/EnemySpawnSystem.gd" type="Script" id=8]
 [ext_resource path="res://Ecs/Systems/MouseSwordSystem.gd" type="Script" id=9]
+[ext_resource path="res://Ecs/Systems/DamageSystem.gd" type="Script" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -56,6 +57,9 @@ script = ExtResource( 9 )
 
 [node name="BehaviourSystem" type="Node2D" parent="Systems"]
 script = ExtResource( 3 )
+
+[node name="DamageSystem" type="Node2D" parent="Systems"]
+script = ExtResource( 10 )
 
 [node name="World" type="Node2D" parent="."]
 script = ExtResource( 2 )
