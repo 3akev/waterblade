@@ -23,6 +23,7 @@ config/icon="res://icon.png"
 
 Constants="*res://Core/Constants.gd"
 Events="*res://Core/Events.gd"
+Locator="*res://Core/Locator.gd"
 
 [display]
 
