@@ -32,3 +32,10 @@ static func map_to_world(d, tilemap):
 
 static func map_rect_to_world(tilemap, rect):
 	return Rect2(tilemap.map_to_world(rect.position), tilemap.map_to_world(rect.size))
+
+static func get_room_containing_point(d, pos):
+	for slot in d.rooms:
+		var room = d.rooms[slot]
+		if room.has_point(pos):
+			return room
+	return null
