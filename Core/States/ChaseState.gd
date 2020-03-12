@@ -12,6 +12,6 @@ func on_integrate_forces(state):
 	var direction = target.position.direction_to(player.position)
 	var distance = target.position.distance_to(player.position)
 	if DT.get_room_containing_point(dungeon, target.position) == DT.get_room_containing_point(dungeon, player.position):
-		state.linear_velocity = direction * 50
+		state.linear_velocity = direction * Constants.ENEMY_SPEED
 	else:
 		state.linear_velocity = Vector2.ZERO
