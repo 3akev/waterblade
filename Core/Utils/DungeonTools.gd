@@ -1,12 +1,10 @@
 extends Node
 
+const Random = preload("res://Core/Utils/Random.gd")
 const Directions = preload("res://Core/Utils/Directions.gd")
 
 static func get_random_room(d):
-	randomize()
-	var ls = d.rooms.keys()
-	ls.shuffle()
-	return ls[0]
+	return Random.get_random_element(d.rooms.keys())
 
 static func get_adjacent_non_connected_room(d, slot):
 	for v in Directions.get_randomized_directions():
