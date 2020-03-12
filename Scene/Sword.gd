@@ -1,5 +1,7 @@
 extends Area2D
 
+const MovementControl = preload("res://Core/Utils/MovementControl.gd")
+
 onready var sprite = $Sprite
 onready var shape = $CollisionShape2D
 
@@ -12,15 +14,7 @@ func _process(delta):
 		sprite.scale = Vector2(1, 1)
 		shape.shape.b.y = 15
 	if Input.is_action_pressed("sword_swing"):
-		var direction = Vector2()
-		if Input.is_action_pressed("sword_down"):
-			direction.y = Input.get_action_strength("sword_down")
-		if Input.is_action_pressed("sword_left"):
-			direction.x = -Input.get_action_strength("sword_left")
-		if Input.is_action_pressed("sword_right"):
-			direction.x = Input.get_action_strength("sword_right")
-		if Input.is_action_pressed("sword_up"):
-			direction.y = -Input.get_action_strength("sword_up")
+		var direction = MovementControl.get_movement_from_actions("sword_up", "sword_right", "sword_down", "sword_left")
 		
 		var prev_rotation = rotation
 		rotation = lerp_angle(rotation, direction.angle() - PI/2, 0.2)
