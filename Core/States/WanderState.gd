@@ -10,7 +10,7 @@ func on_integrate_forces(state):
 		return
 	elapsed += state.step
 	target.linear_velocity = direction * Constants.ENEMY_SPEED
-	if elapsed > 1.5:
+	if elapsed > Constants.ENEMY_WANDER_TIME:
 		state_machine.transition("idle")
 		target.linear_velocity = Vector2.ZERO
 
