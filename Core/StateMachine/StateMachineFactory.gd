@@ -12,5 +12,4 @@ static func create(config = {}):
 	if "current_state" in config: sm.set_current_state(config.current_state)
 
 	sm.set_current_state(sm.current_state)
-	sm._ready()
 	return sm

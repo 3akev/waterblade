@@ -146,15 +146,11 @@ func transition(state_id):
 
 	var from_state = get_state(current_state)
 	var to_state = get_state(state_id)
-
+	
+	set_current_state(state_id)
 	if from_state.has_method("_on_leave_state"): from_state._on_leave_state()
 	if to_state.has_method("_on_enter_state"): to_state._on_enter_state()
-
-	set_current_state(state_id)
-
-func _ready():
-	for state in states.values():
-		state._ready()
+	
 
 func _process(delta):
 	"""

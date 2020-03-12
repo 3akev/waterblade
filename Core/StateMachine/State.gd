@@ -1,3 +1,5 @@
+const Random = preload("res://Core/Utils/Random.gd")
+
 # State ID
 var id = "" setget set_id
 
@@ -16,11 +18,15 @@ func set_target(value):
 func set_state_machine(value):
 	state_machine = value
 
-func _ready():
-	pass
+func is_active():
+	return state_machine.current_state == id
 
 # State machine callback called during transition when entering this state
 func _on_enter_state(): pass
 
 # State machine callback called during transition when leaving this state
 func _on_leave_state(): pass
+
+func transition_randomly():
+	var transitions = state_machine.get_transition(id)
+	state_machine.transition(Random.get_random_element(transitions["to_states"]))
