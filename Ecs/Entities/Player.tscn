@@ -12,7 +12,6 @@ height = 3.5
 [node name="Player" type="RigidBody2D"]
 collision_mask = 0
 mode = 2
-linear_damp = 2.5
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

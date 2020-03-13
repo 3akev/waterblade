@@ -35,14 +35,14 @@ func _physics_process(delta):
 		previous_pos = tip.global_position
 		scale_sword()
 		
-	for body in get_overlapping_bodies():
-		if not body in currently_stabbing:
-			currently_stabbing.append(body)
-			var damage = Constants.BASE_SWORD_DAMAGE
-			damage += velocity * Constants.SWORD_DAMAGE_VELOCITY_MULT
-			Events.emit_signal("damage_entity", body, floor(damage))
-			print(body.name, ", ", str(damage))
-	
-	for body in currently_stabbing:
-		if not overlaps_body(body):
-			currently_stabbing.erase(body)
+		for body in get_overlapping_bodies():
+			if not body in currently_stabbing:
+				currently_stabbing.append(body)
+				var damage = Constants.BASE_SWORD_DAMAGE
+				damage += velocity * Constants.SWORD_DAMAGE_VELOCITY_MULT
+				Events.emit_signal("damage_entity", body, floor(damage))
+				print(body.name, ", ", str(damage))
+		
+		for body in currently_stabbing:
+			if not overlaps_body(body):
+				currently_stabbing.erase(body)
