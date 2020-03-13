@@ -9,9 +9,6 @@ var velocity
 var previous_pos
 var currently_stabbing = []
 
-func scale_sword():
-	sprite
-
 func _physics_process(delta):
 	if Input.is_action_just_pressed("sword_swing"):
 		position = Vector2(0, 0)
@@ -22,7 +19,6 @@ func _physics_process(delta):
 		velocity = 0
 		position = Vector2(5, -5)
 		rotation = PI/4
-		scale_sword()
 	
 	if Input.is_action_pressed("sword_swing"):
 		var direction = MovementControl.get_movement_from_actions("sword_up", "sword_right", "sword_down", "sword_left")
@@ -33,7 +29,6 @@ func _physics_process(delta):
 		velocity = (tip.global_position - previous_pos).length()
 		
 		previous_pos = tip.global_position
-		scale_sword()
 		
 		for body in get_overlapping_bodies():
 			if not body in currently_stabbing:
